@@ -20,13 +20,13 @@ public class ZamowienieController {
     private ZamowienieRepository zamowienieRepository;
 
     //get address
-    @GetMapping("dane-zamowienia")
+    @GetMapping("zamowienie")
     public List<ZamowienieIdentity> getAllAddress() {
         return this.zamowienieRepository.findAll();
     }
 
     //get address by id
-    @GetMapping("/dane-zamowienia/{id}")
+    @GetMapping("/zamowienie/{id}")
     public ResponseEntity<ZamowienieIdentity> getAddressById(@PathVariable(value = "id") int id_zamowienia)
             throws ResourceNotFoundException {
         ZamowienieIdentity zamowienieIdentity = zamowienieRepository.findById(id_zamowienia)
@@ -35,13 +35,13 @@ public class ZamowienieController {
     }
 
     //save address
-    @PostMapping("dane-zamowienia")
+    @PostMapping("zamowienie")
     public ZamowienieIdentity createAddress(@RequestBody ZamowienieIdentity zamowienieIdentity) {
         return this.zamowienieRepository.save(zamowienieIdentity);
     }
 
     //update address
-    @PutMapping("dane-zamowienia/{id}")
+    @PutMapping("zamowienie/{id}")
     public ResponseEntity<ZamowienieIdentity> updateAddress(@PathVariable(value = "id") int id_zamowienia,
                                                                 @Validated @RequestBody ZamowienieIdentity zamowienieDetails) throws ResourceNotFoundException {
 
@@ -61,7 +61,7 @@ public class ZamowienieController {
     }
     //delete address
 
-    @DeleteMapping("dane-zamowienia/{id}")
+    @DeleteMapping("zamowienie/{id}")
     public Map<String, Boolean> deleteAddress(@PathVariable(value = "id") int id_zamowienia) throws ResourceNotFoundException {
 
         ZamowienieIdentity zamowienieIdentity = zamowienieRepository.findById(id_zamowienia)

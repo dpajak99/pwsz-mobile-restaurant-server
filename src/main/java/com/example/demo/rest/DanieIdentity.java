@@ -26,7 +26,8 @@ public class DanieIdentity {
         super();
     }
 
-    public DanieIdentity(int id_kategorii, String nazwa, String opis, int cena) {
+    public DanieIdentity(int id_dania, int id_kategorii, String nazwa, String opis, int cena) {
+        this.id_dania = id_dania;
         this.id_kategorii = id_kategorii;
         this.nazwa = nazwa;
         this.opis = opis;
@@ -59,6 +60,14 @@ public class DanieIdentity {
 
     public int getCena() {
         return cena;
+    }
+
+    public int getId_dania() {
+        return id_dania;
+    }
+
+    public void setId_dania(int id_dania) {
+        this.id_dania = id_dania;
     }
 
     public void setCena(int cena) {
